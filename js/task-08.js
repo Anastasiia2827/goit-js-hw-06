@@ -6,9 +6,10 @@ function onFormSubmit(evt) {
     evt.preventDefault();
     const formEl = evt.currentTarget.elements;
 
-    if (!formEl.email.value || !formEl.password.value) {
+    if (!formEl.email.value.trim() || !formEl.password.value.trim()) {
         alert('Всі поля повинні бути заповнені');
-    }
+        return;
+    } 
     const email = formEl.email.value;
     const password = formEl.password.value;
 
